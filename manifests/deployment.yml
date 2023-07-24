@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: yamisotomoye 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yamisotomoye
+  template:
+    metadata:
+      labels:
+        app: yamisotomoye 
+    spec:
+      containers:
+        - name: yamisotomoye 
+          image: aksdevopscgtlx.azurecr.io/yamisotomoye
+          ports:
+          - containerPort: 80
